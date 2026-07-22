@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Employee emp = new Employee("Muskan", "Female", 58000);
+		Employee emp = new Employee("Arshad", "male", 58000);
 		
 		
 		Session session = HibernateConfig.getSessionFactory().openSession();
