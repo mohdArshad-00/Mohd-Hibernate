@@ -11,17 +11,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Employee emp = new Employee("Arshad", "male", 58000);
+		Employee emp = new Employee("Arhan", "male", 88000, "HCL" );
+		
 		
 		
 		Session session = HibernateConfig.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		
 		
-		session.persist(emp);
-		transaction.commit();
+//		session.persist(emp);
+//		transaction.commit();
+//
+	    Employee employee =	session.find(Employee.class, 3);
+	    System.out.println(employee);
+	    
+//	    session.load(emp, 1);
+//	    System.out.println(emp);
 
-		
-	}
+	} 
 
 }
