@@ -51,7 +51,7 @@ public class Main {
 
 		
 		
-		Query query1 = session.createQuery("SELECT SUM(salary) from employee");
+	Query query1 = session.createQuery("SELECT max(name) from employee");
 //		List list = query1.list();
 		System.out.println(query1.list());
 
