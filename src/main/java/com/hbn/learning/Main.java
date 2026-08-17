@@ -15,57 +15,26 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Employee emp = new Employee("Muskan", "Female", 72000);
+		Employee emp = new Employee("Shadab", "Male", 72000);
 		
 		
 		Session session = HibernateConfig.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		
 		
-		session.persist(emp);
-		transaction.commit();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		Query query = session.createQuery("from employee", Employee.class);
-//		List list = query.list();
-//		System.out.println(list);
-		
-		
-		
-//		Query query = session.createQuery("from employee", Employee.class);
-//		query.setFirstResult(2);
-//		query.setMaxResults(4);
-//		List list = query.list();
-//		System.out.println(list);
-		
-//		Query query = session.createQuery("update employee set name = :n, salary = :s where is = :i", Employee.class);
-//		
-//		query.setParameter("n", "Afzal");
-//		query.setParameter("s", "154321");
-//		query.setParameter("i", "2");
-//		query.executeUpdate();
-		
-		
-//		MutationQuery query = session.createMutationQuery("delete from employee where id = :i");
-//		query.setParameter("i", "6");
-//		query.executeUpdate();
-//		transaction.commit();
-		
-		
-//	Query query1 = session.createQuery("SELECT max(name) from employee");
-//		List list = query1.list();
-//		System.out.println(query1.list());
+		Query<Employee> query = session.createNamedQuery("Employee.findEmployeeById", Employee.class);
+		query.setParameter("id", "5");
+		List<Employee> employees = query.getResultList();
+		System.out.println(employees);
 
+		System.out.println();
+
+		Query<Employee> q = session.createNamedQuery("Employee.findByGender", Employee.class);
+		q.setParameter("gender", "male");
+		System.out.println(q.list());
+//		tx.commit();
+		session.close();
+		
 
 		
 	}
