@@ -15,16 +15,31 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Employee emp = new Employee("Sayud", "male", 62000);
+		Employee emp = new Employee("Muskan", "Female", 72000);
 		
 		
 		Session session = HibernateConfig.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		
 		
+		session.persist(emp);
+		transaction.commit();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 //		Query query = session.createQuery("from employee", Employee.class);
 //		List list = query.list();
 //		System.out.println(list);
+		
 		
 		
 //		Query query = session.createQuery("from employee", Employee.class);
@@ -47,13 +62,9 @@ public class Main {
 //		transaction.commit();
 		
 		
-
-
-		
-		
-	Query query1 = session.createQuery("SELECT max(name) from employee");
+//	Query query1 = session.createQuery("SELECT max(name) from employee");
 //		List list = query1.list();
-		System.out.println(query1.list());
+//		System.out.println(query1.list());
 
 
 		
