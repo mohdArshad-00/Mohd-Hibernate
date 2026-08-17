@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 
@@ -19,6 +20,7 @@ public class Employee {
 	private int salary;
 	
 	@OneToOne
+	@JoinColumn(name = "add_id")
 	private Address address;
 	
 	public Employee() {
