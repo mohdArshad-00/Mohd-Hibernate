@@ -11,13 +11,11 @@ import jakarta.persistence.OneToOne;
 
 @Entity
 public class Address {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String city, state;
 	private int pinCode;
-	
 	
 	
 	public Address() {

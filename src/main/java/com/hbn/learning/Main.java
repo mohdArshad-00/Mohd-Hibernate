@@ -35,10 +35,10 @@ public class Main {
 		Transaction transaction = session.beginTransaction();
 		
 		session.persist(emp);
-		session.persist(add1);
-		session.persist(add2);
-		session.persist(add3);
-		session.persist(add4);
+//		session.persist(add1);
+//		session.persist(add2);
+//		session.persist(add3);
+//		session.persist(add4);
 		transaction.commit();
 		
 		
