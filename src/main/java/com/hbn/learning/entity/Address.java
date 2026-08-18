@@ -18,9 +18,6 @@ public class Address {
 	private String city, state;
 	private int pinCode;
 	
-	@OneToOne(mappedBy = "address")
-	private Employee employee;
-	
 	
 	public Address() {
 	}
@@ -33,17 +30,6 @@ public class Address {
 		this.pinCode = pinCode;
 	}
 
-
-	
-	
-	public Employee getEmployee() {
-		return employee;
-	}
-
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
 
 
 	public int getId() {
